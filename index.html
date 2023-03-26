@@ -2,86 +2,110 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>breast cancer</title>
+    <title>ML API</title>
 
     <style>
       /* CSS code for button */
       body {
-        background-image: url("static/images/world.jpg");
+        background-image: url("hospital.jpg");
         background-repeat: no-repeat;
+        font-size: 16px;
         background-attachment: fixed;
         background-size: cover;
+        align-items: center;
+      }
+
+      img {
+        display: block;
+        margin: auto;
       }
 
       /* CSS code for button */
       .button_css {
-        color: #494949 !important;
+        color: #020202;
+        margin: 20px;
         text-transform: uppercase;
         text-decoration: none;
-        background: #ffffff;
-        padding: 20px;
-        border: 4px solid #494949 !important;
+        background: #2c92c5;
+        padding: 2px;
+        border: 2px solid #3a3a3a !important;
         display: inline-block;
         transition: all 0.4s ease 0s;
       }
 
       .button_css:hover {
-        color: #ffffff !important;
-        background: #f6b93b;
-        border-color: #f6b93b !important;
-        transition: all 0.4s ease 0s;
+        color: #1e800c !important;
+        background: #218126;
+        /* border-color: #f6b93b !important; */
+        /* transition: all 0.4s ease 0s; */
+      }
+
+      /* Media query for screens smaller than 600px */
+      @media (max-width: 600px) {
+        body {
+          font-size: 14px;
+          /* other styles for small screens */
+        }
       }
     </style>
   </head>
 
   <body>
+    <!-- Show Indian AI Hospital banner-->
+
     <div>
       <img
-        src="static/images/Indian AI Hospital.png"
-        class="w3-border w3-padding"
-        alt="Indian AI Hospital"
-        style="width: 100%"
+        src="cancer.png"
+        class="center"
+        alt="cancer image"
+        style="width: 90%"
       />
     </div>
 
     <div class="login">
       <!-- Get input for predict the cancer -->
-      <center>
-        <form action="{{ url_for('predict')}}" method="POST">
-          <h1>Enter the value of tumor features >>></h1>
+      <center style="margin: 30px; padding: 30px">
+        <form action="{{url_for('predict')}}" method="POST">
+          <h1>Enter the values for prediction</h1>
 
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="mean_radius"
             placeholder="mean radius"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="mean_texture"
             placeholder="mean texture"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="mean_perimeter"
             placeholder="mean perimeter"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="mean_area"
             placeholder="mean area"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="mean_smoothness"
             placeholder="mean smoothness"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="mean_compactness"
             placeholder="mean compactness"
             required="required"
@@ -89,36 +113,42 @@
           <br />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="mean_concavity"
             placeholder="mean concavity"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="mean_concave_points"
             placeholder="mean concave points"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="mean_symmetry"
             placeholder="mean symmetry"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="mean_fractal_dimension"
             placeholder="mean fractal dimension"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="radius_error"
             placeholder="radius error"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="texture_error"
             placeholder="texture error"
             required="required"
@@ -126,36 +156,43 @@
           <br />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="perimeter_error"
             placeholder="perimeter error"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="area_error"
             placeholder="area error "
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
+            style="margin: 10px; padding: 5px"
             name="smoothness_error"
             placeholder="smoothness error"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="compactness_error"
             placeholder="compactness error"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="concavity_error"
             placeholder="concavity error"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="concave_points_error"
             placeholder="concave points error"
             required="required"
@@ -163,36 +200,42 @@
           <br />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="symmetry_error"
             placeholder="symmetry error"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="fractal_dimension_error"
             placeholder="fractal dimension error"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="worst_radius"
             placeholder="worst radius"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="worst_texture"
             placeholder="worst texture"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="worst_perimeter"
             placeholder="worst perimeter"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="worst_area"
             placeholder="worst area"
             required="required"
@@ -200,36 +243,42 @@
           <br />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="worst_smoothness"
             placeholder="worst smoothness"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="worst_compactness"
             placeholder="worst compactness"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="worst_concavity"
             placeholder="worst concavity"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="worst_concave_points"
             placeholder="worst concave points"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="worst_symmetry"
             placeholder="'worst symmetry"
             required="required"
           />
           <input
             type="text"
+            style="margin: 10px; padding: 5px"
             name="worst_fractal_dimension"
             placeholder="worst fractal dimension"
             required="required"
@@ -241,12 +290,12 @@
           <div class="button_cont" align="center">
             <a
               class="button_css"
-              href=""
+              href="./predict"
               target="_blank"
               rel="nofollow noopener"
             >
               <button type="submit" class="btn btn-primary btn-block btn-large">
-                <strong>Predict Cancer</strong>
+                <strong>Predict Result</strong>
               </button></a
             >
           </div>
@@ -256,7 +305,7 @@
       <!-- Show predicted output using ML model -->
       <div>
         <center>
-          <h1>{{ prediction_text }}</h1>
+          <h1>Result to be shown here :</h1>
         </center>
       </div>
     </div>
